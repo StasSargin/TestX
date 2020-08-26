@@ -5,8 +5,21 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
+    
     def __init__(self, driver):
         self.driver = driver
+
+    def __element(self, selector: dict, index: int, link_text: str = None):
+        by = None
+        if link_text:
+            by = By.PARTIAL_LINK_TEXT
+        elif 'css' in selector.keys():
+            by = By.CSS_SELECTOR
+            selector = selector['css']
+        return self.driver.find_elements(by, selector)[index]
+
+    def _click(self, selector, index=0):
+        ActionChains(self.driver).move_to_element(self.__element(selector, index)).click().perform()
 
     # def __element(self, selector: dict, index: int = 0, link_text: str = None):
     #     by = None

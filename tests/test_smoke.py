@@ -5,5 +5,7 @@ def test_smoke(browser):
     HeaderPage(browser)\
         .click_category()\
         .click_product()
-    # header_page = HeaderPage(browser)
-    # header_page.click_product()
+    # ProductPage(browser)\
+    #     .add_product_to_cart()\
+    #     .click_cart_total()\
+    #     .click_view_cart()
