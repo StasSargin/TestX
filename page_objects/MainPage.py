@@ -1,2 +1,6 @@
+from locale import Main
+
+
 class MainPage:
-    pass
+    def click_item(self):
+        self._click(selector=Main.item)

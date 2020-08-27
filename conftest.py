@@ -4,7 +4,7 @@ from selenium import webdriver
 
 @pytest.fixture
 def browser(request):
-    url = 'https://demo.opencart.com/'
+    url = 'https://site.com/'
     driver = webdriver.Firefox()
     driver.implicitly_wait(5)
     driver.get(url)
